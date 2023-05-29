@@ -1,63 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
-body{
-  margin-top: 100px;
+body {
   background: #080808;
   color: #fff;
 }
 
 /* Navbar styling*/
-#header{
+#navbar {
   width: 100%;
   height: 5vh;
   position: fixed;
   top: 0;
 }
 
-.container{
+.container {
   padding: 10px 10%;
   background: #080808;
 }
 
-nav{
+nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  border-bottom: 1px solid #ccc;
 }
 
-nav ul li{
+nav ul li {
   display: inline-block;
   list-style: none;
   margin: 10px 20px;
 }
 
-nav ul li a{
+nav ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 18px;
   position: relative;
 }
 
-nav p a{
+nav p a {
   color: #fff;
   text-decoration: none;
   font-size: 40px;
   position: relative;
 }
 
-nav ul li a::after{
+nav ul li a::after {
   content: "";
   width: 0;
   height: 3px;
@@ -68,21 +68,26 @@ nav ul li a::after{
   transition: width 0.5s; 
 }
 
-nav ul li a:hover::after{
+nav ul li a:hover::after {
   width: 100%;
 }
 
-nav p a:hover {
+nav p a:hover, body.light-mode nav p a:hover {
   color:  #808080;
 }
   
+.menu-toggle {
+  display: none;
+}
+
 /* Footer styling */
 footer {
   padding: 20px;
   text-align: center;
+  border-top: 1px solid #ccc;
 }
 
-footer p{
+footer p {
   margin-bottom: 10px;  
 }
 
@@ -102,10 +107,18 @@ body.light-mode nav ul li a, body.light-mode nav p a, body.light-mode .mode-butt
   margin-top: 20px;
 }
 
-body.light-mode .container{
+body.light-mode .container {
   background: #fff;
 }
 
+body.light-mode .header{
+  color: blue;
+}
+
+body.light-mode .contact-right button {
+  background-color: blue;
+  color: white;
+}
 
 .mode-button {
   background-color: transparent;
@@ -125,38 +138,21 @@ body.light-mode .container{
 }
 
 /* Hero styling */
-#hero{
+#hero {
   padding:20px;
+  padding-top: 300px;
+  padding-bottom: 150px;
 }
 
-.hero-section{
+.hero-section {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 40px;
 }
 
-.hero-section{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.hero-section{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 40px;
-  padding: 40px;
-
-}
-
-.hero-content{
-  max-width: 800px; 
+.hero-content {
+  max-width: 1000px; 
   margin: 0 auto;
 }
 
@@ -169,34 +165,55 @@ body.light-mode .container{
   color: #808080; 
 }
 
-/* About styling */
-
-#about {
+.icon-container {
   padding: 20px;
   max-width: 1000px; 
   margin: 0 auto;
+  padding-bottom: 300px;
 }
 
-.about-title {
+.fa-arrow-down {
+  font-size: 100px;
+  position: absolute;
+  z-index: -1;
+}
+
+/* About, Skills, Contact Shared styling */
+
+#projects, 
+#about, 
+#skills, 
+#contact {
+  padding: 20px;
+  max-width: 1200px; 
+  margin: 0 auto;
+  scroll-margin-top: 80px;
+  padding-bottom: 300px;
+}
+
+.header {
   font-size: 54px;
   font-weight: bold;
-  color: #808080;
+  color: aqua;
   margin-bottom: 10px;
 }
 
-.about-description {
+.about-description, 
+.skills-description {
   font-size: 20px;
   margin-bottom: 30px;
 }
 
+/* About Styling */
+
 .about-subsection-title {
-  font-size: 25px;
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .about-subheading {
-  font-size: 14px;
+  font-size: 20px;
   color: #808080;
   font-weight: bold;
   margin-bottom: 10px;
@@ -212,4 +229,155 @@ body.light-mode .container{
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 30px;
+}
+
+/* Skills styling */
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 250px;
+  margin: 50px;
+}
+
+.skills-column {
+  max-width: 290px;
+}
+
+.skills-column h3 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  color:#808080;
+}
+
+.skills-column ul {
+  list-style: none;
+}
+
+.skills-column li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.skills-column img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  filter: grayscale(100%);
+}
+
+.skills-column i {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.skills-section i {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* contact styling */
+
+.contact-section {
+  display: flex;
+  padding-bottom: 300px;
+}
+
+.contact-left {
+  flex: 1;
+}
+
+.contact-left p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.contact-socials {
+  margin-top: 20px;
+}
+
+.contact-socials a {
+  color: #808080;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.contact-socials a:hover {
+  color: #fff;
+}
+
+.contact-right {
+  flex: 1;
+  border: 1px solid #808080;
+  padding: 40px;
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-right h1 i {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-right input,
+.contact-right textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #808080;
+  border-radius: 5px;
+}
+
+.contact-right button {
+  background-color: aqua;
+  color: black;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid #808080;
+}
+
+.contact-right button:hover {
+  background-color: #808080;
+}
+
+/* css for small screens */
+@media only screen and (max-width: 800px){
+  .skills-container {
+    flex-direction: column;  
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+  }
+
+  #projects,
+  #skills, 
+  #about, 
+  #contact {
+    padding-bottom: 50px;
+  }
+
+  .contact-section {
+    flex-direction: column;  
+    margin: 0 auto;
+    gap: 10px;
+  }
+  
 }
